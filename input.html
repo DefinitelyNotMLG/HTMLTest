@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Input</title>
+</head>
+<body>
+    <!-- where we put my form-->
+    <form action="output.html" method="get">
+        Name: <input autofocus="autofocus" type="text" name="name"><br>
+        Country: <input type="text" list="country" name="countries">
+        <datalist id="country">
+            <option value="UK">
+            <option value="Canada">
+            <option value="USA">
+            <option value="India">
+            <option value="Brasil">
+        </datalist>
+        <br />
+        Sex: <br />
+        <input type="radio" name="sex" value="Male" /> Male <br />
+        <input type="radio" name="sex" value="Female" /> Female <br />
+        DOB: <input type="text" name="DOB" /> <br />
+
+        <textarea rows="4" cols="50">Leave a comment if you like!</textarea> <br />
+        <input type="submit" list="country" value="submit" />
+    </form>
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <circle cx="100" cy="50" r="40" stroke="red" stroke-width="2" fill="blue" />
+    </svg> <br />
+    <video width="320" hight="240" controls>
+        <source src="Video1.mp4" type="video/mp4" />
+        Your Browser Does not Support HTML5/mp4 files
+    </video>
+    <audio controls>
+        <source src="Music1.mp3" />
+        Your Web Browser does  not support HTML5/mp3
+    </audio>
+    <!-- HTML GeoLocator Button-->
+    <p id="html.net">Where are you in the world?</p>
+    <button onclick="getLocation()">Get Coordinates</button>
+    <!--JavaScript Locator-->
+    <script>
+
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            }
+            else {
+                document.getElementById("html.net").innerHTML = "Geolocation is not supported by this browser.";
+            }
+        }
+
+        function showPosition(position) {
+            document.getElementById("html.net").innerHTML = "Latitude: " + position.coords.latitude +
+                "<br>Longitude: " + position.coords.longitude;
+        }
+
+    </script>
+</body>
+</html>
